@@ -68,5 +68,11 @@
 
     # This is highly advised, and will prevent many possible mistakes
     checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) deploy-rs.lib;
+
+    hydraJobs = {
+      nixosConfigurations = nixpkgs.lib.mapAttrs' (name: config:
+        nixpkgs.lib.nameValuePair name config.config.system.build.toplevel)
+        self.nixosConfigurations;
+    };
   };
 }
