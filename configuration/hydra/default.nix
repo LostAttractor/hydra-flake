@@ -6,6 +6,7 @@
     ./features/remote-builds.nix
     ./features/hydra.nix
     ./features/nix-serve.nix
+    ./features/nginx.nix
   ];
 
   # nixpkgs.config.contentAddressedByDefault = true;
