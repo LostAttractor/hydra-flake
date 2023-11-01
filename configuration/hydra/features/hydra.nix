@@ -8,9 +8,6 @@
     "https://git.sr.ht"
   ];
 
-  # Add Firewall Rules for Hydra
-  networking.firewall.allowedTCPPorts = [ 3000 ];
-
   # Hydra
   services.hydra = {
     enable = true;
