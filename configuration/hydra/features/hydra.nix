@@ -9,7 +9,7 @@
   ];
 
   # Add Firewall Rules for Hydra
-  networking.firewall.allowedTCPPorts = [ 3000 ];
+  # networking.firewall.allowedTCPPorts = [ 3000 ];
 
   # Hydra
   services.hydra = {
