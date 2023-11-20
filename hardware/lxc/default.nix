@@ -1,9 +1,6 @@
 { modulesPath, ... }:
 {
-  # imports = [ (modulesPath + "/virtualisation/lxc-container.nix") ];
-  imports = [ ./lxc-container.nix ];
-
-  virtualisation.lxc.nestedContainer = true;
+  imports = [ (modulesPath + "/virtualisation/lxc-container.nix") ];
 
   # Supress systemd units that don't work because of LXC
   systemd.suppressedSystemUnits = [ "sys-kernel-debug.mount" ];
