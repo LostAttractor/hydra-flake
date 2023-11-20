@@ -5,9 +5,9 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" "ca-derivations" ];
 
   # Substituters
-  nix.settings.substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" "https://cache.ngi0.nixos.org" ];
+  nix.settings.substituters = [ "https://binarycache.home.lostattractor.net" "https://mirror.sjtu.edu.cn/nix-channels/store" "https://cache.ngi0.nixos.org" ];
 
-  nix.settings.trusted-public-keys =  [  "cache.ngi0.nixos.org-1:KqH5CBLNSyX184S9BKZJo1LxrxJ9ltnY2uAs5c/f1MA=" ];
+  nix.settings.trusted-public-keys =  [ "binarycache.home.lostattractor.net:nB258qoytYrdCe2pcI6qJ/M9R0l7Q5l9Bu5ryCbzItc=" "cache.ngi0.nixos.org-1:KqH5CBLNSyX184S9BKZJo1LxrxJ9ltnY2uAs5c/f1MA=" ];
 
   # Sandbox
   nix.settings.sandbox = true;
