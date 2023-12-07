@@ -15,7 +15,7 @@
     notificationSender = "hydra@lostattractor.net";
     useSubstitutes = true;
     extraConfig = ''
-      max_output_size = 8589934591 # 1024^3*8-1
+      max_output_size = 34359738367 # 1024^3 * 32 - 1
     '';
   };
 }
