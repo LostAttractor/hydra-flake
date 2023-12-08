@@ -1,4 +1,4 @@
-{ modulesPath, config, pkgs, ... }:
+_:
 
 {
   # Allowed URIs
