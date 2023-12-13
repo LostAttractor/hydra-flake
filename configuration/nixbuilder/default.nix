@@ -9,9 +9,6 @@
 
   nix.settings.trusted-public-keys =  [ "binarycache.home.lostattractor.net:nB258qoytYrdCe2pcI6qJ/M9R0l7Q5l9Bu5ryCbzItc=" "cache.ngi0.nixos.org-1:KqH5CBLNSyX184S9BKZJo1LxrxJ9ltnY2uAs5c/f1MA=" ];
 
-  # Sandbox
-  nix.settings.sandbox = true;
-
   # Store Optimise & Auto Clean
   nix.settings.auto-optimise-store = true;
   nix.gc = {
