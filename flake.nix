@@ -39,6 +39,7 @@
     # Deploy-RS Configuration
     deploy = {
       sshUser = "root";
+      magicRollback = false;
 
       nodes."hydra@pve2.home.lostattractor.net" = {
         hostname = "hydra.home.lostattractor.net";
