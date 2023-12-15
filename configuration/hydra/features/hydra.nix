@@ -2,11 +2,8 @@ _:
 
 {
   # Allowed URIs
-  nix.settings.allowed-uris = [
-    "https://github.com"
-    "https://api.github.com"
-    "https://git.sr.ht"
-  ];
+  # TODO: https://nixos.org/manual/nix/stable/release-notes/rl-2.20
+  nix.settings.allowed-uris = [ "github:" "https:" ];
 
   # Hydra
   services.hydra = {
