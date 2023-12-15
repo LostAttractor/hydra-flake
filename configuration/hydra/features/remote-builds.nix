@@ -4,7 +4,7 @@ _:
   # Remote Builds
   nix.buildMachines = [
     {
-      hostName = "root@nixbuilder1.home.lostattractor.net";
+      hostName = "nixremote@nixbuilder1.home.lostattractor.net";
       systems = ["x86_64-linux" "i686-linux"];
       maxJobs = 1;
       speedFactor = 2;
@@ -12,7 +12,7 @@ _:
       mandatoryFeatures = [ ];
     }
     {
-      hostName = "root@nixbuilder2.home.lostattractor.net";
+      hostName = "nixremote@nixbuilder2.home.lostattractor.net";
       systems = ["x86_64-linux" "i686-linux"];
       maxJobs = 3;
       speedFactor = 2;
@@ -20,7 +20,7 @@ _:
       mandatoryFeatures = [ ];
     }
     {
-      hostName = "root@nixbuilder.home.net.men.ci";
+      hostName = "nixremote@nixbuilder.home.net.men.ci";
       systems = ["x86_64-linux" "i686-linux"];
       maxJobs = 2;
       speedFactor = 2;
