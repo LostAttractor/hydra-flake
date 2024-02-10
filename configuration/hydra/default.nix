@@ -7,6 +7,7 @@
     ./features/hydra.nix
     ./features/nix-serve.nix
     ./features/nginx.nix
+    ./features/prometheus.nix
   ];
 
   users = {

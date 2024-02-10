@@ -45,6 +45,12 @@
   # Basic Packages
   environment.systemPackages = with pkgs; [ htop btop bottom micro ];
 
+  # Prometheus Node Exporter
+  services.prometheus.exporters.node = {
+    enable = true;
+    openFirewall = true;
+  };
+
   system.stateVersion = "23.05";
 }
 
