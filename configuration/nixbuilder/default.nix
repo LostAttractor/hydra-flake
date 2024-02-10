@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ../features/prometheus.nix
+  ];
+
   # Enabling Flake
   nix.settings.experimental-features = [ "nix-command" "flakes" "ca-derivations" ];
 
@@ -46,4 +50,3 @@
 
   system.stateVersion = "23.05";
 }
-

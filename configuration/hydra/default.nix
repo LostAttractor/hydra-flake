@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../features/prometheus.nix
     ./features/nix.nix
     ./features/remote-builds.nix
     ./features/hydra.nix
