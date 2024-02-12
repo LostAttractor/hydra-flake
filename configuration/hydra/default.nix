@@ -10,6 +10,8 @@
     ./features/prometheus.nix
   ];
 
+  boot.tmp.useTmpfs = true;
+
   users = {
     # Don't allow mutation of users outside of the config.
     mutableUsers = false;
@@ -22,5 +24,5 @@
   # Basic Packages
   environment.systemPackages = with pkgs; [ htop btop bottom micro ];
 
-  system.stateVersion = "23.05";
+  system.stateVersion = "24.05";
 }
