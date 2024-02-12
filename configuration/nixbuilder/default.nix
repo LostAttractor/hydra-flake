@@ -48,5 +48,5 @@
   # Basic Packages
   environment.systemPackages = with pkgs; [ htop btop duf ];
 
-  system.stateVersion = "23.05";
+  system.stateVersion = "24.05";
 }
