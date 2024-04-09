@@ -14,6 +14,7 @@
       modules = [
         ./hardware/lxc
         ./configuration/hydra
+        { boot.tmp.useTmpfs = true; }
         { networking.hostName = "hydra"; }
       ];
     };
@@ -32,6 +33,7 @@
       modules = [
         ./hardware/lxc
         ./configuration/nixbuilder
+        { boot.tmp.useTmpfs = true; }
         { networking.hostName = "nixbuilder2"; }
       ];
     };
