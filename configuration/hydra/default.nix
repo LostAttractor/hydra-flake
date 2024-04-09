@@ -4,7 +4,7 @@
   imports = [
     ../features/prometheus.nix
     ./features/nix.nix
-    ./features/remote-builds.nix
+    ./features/builders.nix
     ./features/hydra.nix
     ./features/nix-serve.nix
     ./features/nginx.nix
