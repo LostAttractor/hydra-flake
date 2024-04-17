@@ -5,17 +5,20 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     deploy-rs.url = "github:serokell/deploy-rs";
     deploy-rs.inputs.nixpkgs.follows = "nixpkgs";
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, deploy-rs, ... }: rec {
+  outputs = { nixpkgs, deploy-rs, ... } @ inputs : rec {
     # Hydra@PVE2.home.lostattractor.net
     nixosConfigurations."hydra@pve2.home.lostattractor.net" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./hardware/lxc
         ./configuration/hydra
-        { boot.tmp.useTmpfs = true; }
         { networking.hostName = "hydra"; }
+        { boot.tmp.useTmpfs = true; }
+        inputs.sops-nix.nixosModules.sops
       ];
     };
     # NixBuilder@PVE.home.lostattractor.net
@@ -25,6 +28,7 @@
         ./hardware/lxc
         ./configuration/nixbuilder
         { networking.hostName = "nixbuilder1"; }
+        inputs.sops-nix.nixosModules.sops
       ];
     };
     # NixBuilder@PVE2.home.lostattractor.net
@@ -35,6 +39,7 @@
         ./configuration/nixbuilder
         { boot.tmp.useTmpfs = true; }
         { networking.hostName = "nixbuilder2"; }
+        inputs.sops-nix.nixosModules.sops
       ];
     };
 

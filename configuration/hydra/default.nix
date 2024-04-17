@@ -8,7 +8,10 @@
     ./features/hydra.nix
     ./features/nix-serve.nix
     ./features/nginx.nix
+    ./secrets/nix/access-tokens.nix
   ];
+
+  sops.defaultSopsFile = ../../secrets/hydra.yaml;
 
   users = {
     # Don't allow mutation of users outside of the config.
