@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../features/fish.nix
     ../features/prometheus.nix
     ./features/nix.nix
     ./features/builders.nix
