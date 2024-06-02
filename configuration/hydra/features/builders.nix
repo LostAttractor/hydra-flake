@@ -5,7 +5,7 @@ _:
     # Hydra does not use the local machine when buildMachinesFiles is set
     {
       hostName = "localhost";
-      systems = [ "x86_64-linux" "i686-linux" ];
+      systems = [ "x86_64-linux" "i686-linux" "aarch64-linux" ];
       maxJobs = 16;
       speedFactor = 4;
       supportedFeatures = [ "kvm" "nixos-test" "ca-derivations" "benchmark" ];
@@ -13,7 +13,7 @@ _:
     }
     {
       hostName = "nixremote@nixbuilder1.home.lostattractor.net";
-      systems = [ "x86_64-linux" "i686-linux" ];
+      systems = [ "x86_64-linux" "i686-linux" "aarch64-linux" ];
       maxJobs = 1;
       speedFactor = 2;
       supportedFeatures = [ "kvm" "nixos-test" "ca-derivations" "benchmark" "big-parallel" ];
@@ -21,7 +21,7 @@ _:
     }
     {
       hostName = "nixremote@nixbuilder2.home.lostattractor.net";
-      systems = [ "x86_64-linux" "i686-linux" ];
+      systems = [ "x86_64-linux" "i686-linux" "aarch64-linux" ];
       maxJobs = 1;
       speedFactor = 4;
       supportedFeatures = [ "kvm" "nixos-test" "ca-derivations" "benchmark" "big-parallel" ];

@@ -4,6 +4,7 @@
   imports = [
     ../features/fish.nix
     ../features/prometheus.nix
+    ../features/binfmt.nix
   ];
 
   # Enabling Flake
