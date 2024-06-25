@@ -31,17 +31,6 @@
         inputs.sops-nix.nixosModules.sops
       ];
     };
-    # NixBuilder@PVE2.home.lostattractor.net
-    nixosConfigurations."nixbuilder@pve2.home.lostattractor.net" = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./hardware/lxc
-        ./configuration/nixbuilder
-        { boot.tmp.useTmpfs = true; }
-        { networking.hostName = "nixbuilder2"; }
-        inputs.sops-nix.nixosModules.sops
-      ];
-    };
 
     # Deploy-RS Configuration
     deploy = {
@@ -55,10 +44,6 @@
       nodes."nixbuilder@pve.home.lostattractor.net" = {
         hostname = "nixbuilder1.home.lostattractor.net";
         profiles.system.path = deploy-rs.lib.x86_64-linux.activate.nixos nixosConfigurations."nixbuilder@pve.home.lostattractor.net";
-      };
-      nodes."nixbuilder@pve2.home.lostattractor.net" = {
-        hostname = "nixbuilder2.home.lostattractor.net";
-        profiles.system.path = deploy-rs.lib.x86_64-linux.activate.nixos nixosConfigurations."nixbuilder@pve2.home.lostattractor.net";
       };
     };
 

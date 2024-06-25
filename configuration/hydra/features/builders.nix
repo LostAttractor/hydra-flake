@@ -1,30 +1,39 @@
 _:
+let
+  systems = [
+    "x86_64-linux"
+    "i686-linux"
+    "aarch64-linux"
+  ];
+  supportedFeatures = [
+    "nixos-test"
+    "benchmark"
+    "big-parallel"
+    "kvm"
+    "nix-command"
+    "flakes"
+    "ca-derivations"
+  ];
+in
 {
   nix.buildMachines = [
     # Build small parallel locally
     # Hydra does not use the local machine when buildMachinesFiles is set
     {
       hostName = "localhost";
-      systems = [ "x86_64-linux" "i686-linux" "aarch64-linux" ];
-      maxJobs = 16;
+      protocol = null;
+      systems = systems;
+      maxJobs = 8;
       speedFactor = 4;
-      supportedFeatures = [ "kvm" "nixos-test" "ca-derivations" "benchmark" ];
+      supportedFeatures = supportedFeatures;
       mandatoryFeatures = [ ];
     }
     {
       hostName = "nixremote@nixbuilder1.home.lostattractor.net";
-      systems = [ "x86_64-linux" "i686-linux" "aarch64-linux" ];
-      maxJobs = 1;
+      systems = systems;
+      maxJobs = 2;
       speedFactor = 2;
-      supportedFeatures = [ "kvm" "nixos-test" "ca-derivations" "benchmark" "big-parallel" ];
-      mandatoryFeatures = [ ];
-    }
-    {
-      hostName = "nixremote@nixbuilder2.home.lostattractor.net";
-      systems = [ "x86_64-linux" "i686-linux" "aarch64-linux" ];
-      maxJobs = 1;
-      speedFactor = 4;
-      supportedFeatures = [ "kvm" "nixos-test" "ca-derivations" "benchmark" "big-parallel" ];
+      supportedFeatures = supportedFeatures;
       mandatoryFeatures = [ ];
     }
   ];
