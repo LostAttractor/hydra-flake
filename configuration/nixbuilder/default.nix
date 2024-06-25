@@ -2,17 +2,14 @@
 
 {
   imports = [
+    ../features/nix.nix
     ../features/fish.nix
     ../features/prometheus.nix
     ../features/binfmt.nix
   ];
 
-  # Enabling Flake
-  nix.settings.experimental-features = [ "nix-command" "flakes" "ca-derivations" ];
-
   # Substituters
   nix.settings.substituters = [ "https://binarycache.home.lostattractor.net" "https://mirror.sjtu.edu.cn/nix-channels/store" ];
-
   nix.settings.trusted-public-keys =  [ "binarycache.home.lostattractor.net:nB258qoytYrdCe2pcI6qJ/M9R0l7Q5l9Bu5ryCbzItc=" ];
 
   users = {
